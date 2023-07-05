@@ -10,7 +10,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.105" />
+		<PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.7" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Logs.DataAccess\Logs.DataAccess.csproj" />
+	  <ProjectReference Include="..\Logs.Domain.Services.Interface\Logs.Domain.Services.Interface.csproj" />
+	  <ProjectReference Include="..\Logs.Domain.Services\Logs.Domain.Services.csproj" />
 	</ItemGroup>
 
 </Project>

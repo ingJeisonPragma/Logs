@@ -1,8 +1,13 @@
-﻿namespace Logs.Domain.Services.Interface
+﻿using Logs.Domain.Business.DTO;
+using Logs.Domain.Business.Paginate;
+
+namespace Logs.Domain.Services.Interface
 {
     public interface ILogServices
     {
-        Task<bool> InsertLog();
-        Task<IEnumerable<string>> GetAllLog();
+        Task<bool> InsertLog(LogRequestDTO logDTO);
+        Task<PaginatedListDTO<LogResponseDTO>> GetAllLog(int page, int take);
+        Task<PaginatedListDTO<LogResponseDTO>> GetByApp(string App, int page, int take);
+        Task<LogResponseDTO> GetById(Guid Id);
     }
 }

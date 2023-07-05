@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Logs.DataAccess.Interface\Logs.DataAccess.Interface.csproj" />
+    <ProjectReference Include="..\Logs.Domain.Business\Logs.Domain.Business.csproj" />
     <ProjectReference Include="..\Logs.Domain.Services.Interface\Logs.Domain.Services.Interface.csproj" />
   </ItemGroup>
 

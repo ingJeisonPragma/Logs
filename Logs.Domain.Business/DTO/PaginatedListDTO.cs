@@ -11,8 +11,6 @@ namespace Logs.Domain.Business.DTO
         public List<T> Data { get; set; } = new();
         public int Total { get; set; }
         public int Page { get; set; }
-        public int Pages { get; set; }
-
-        //public bool HasItems { get { return Items != null && Items.Any(); } }
+        public int TotalPages { get; set; }
     }
 }
