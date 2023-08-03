@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: registerlog
+  namespace: talento-develop
+  labels:
+    app: registerlog
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 9070 ###
+    protocol: TCP
+  selector:
+    app: registerlog

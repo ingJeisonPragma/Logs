@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registerlogs
+  namespace: talento-develop ###
+  labels:
+    app: registerlog
+spec:
+  replicas: 1 ###
+  selector:
+    matchLabels:
+      app: registerlog
+  template:
+    metadata:
+      name: registerlog
+      labels:
+        app: registerlog
+    spec:
+      containers:
+      - name: registerlog ## Nombre del contenedor
+        image: registerlog:latest ## Nombre imagen docker
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9070
+        env:
+        #- name: ASPNETCORE_URLS
+        #  valueFrom:
+        #    secretKeyRef:
+        #        name: talento-secret
+        #        key: datasource.urlnet
+        - name: AccessKey
+          valueFrom:
+            secretKeyRef:
+                name: talento-secret
+                key: datasource.keyid
+        - name: SecretKey
+          valueFrom:
+            secretKeyRef:
+                name: talento-secret
+                key: datasource.accesskey
+        - name: Region
+          valueFrom:
+            secretKeyRef:
+                name: talento-secret
+                key: datasource.region

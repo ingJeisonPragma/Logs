@@ -22,6 +22,17 @@ namespace Logs.Api.Controllers
         }
 
         /// <summary>
+        /// Se encarga de validar la funcionalidad de la Api.
+        /// </summary>
+        /// <response code="200">Devuelve si fue corecto.</response>
+        [HttpGet]
+        [Route("GetHealth")]
+        public ActionResult GetHealth()
+        {
+            return StatusCode(200, true);
+        }
+
+        /// <summary>
         /// Se encarga de listar todos los logs registrados.
         /// </summary>
         /// <param name="page">Indica el número de la pagina, por defecto es 1.</param>
